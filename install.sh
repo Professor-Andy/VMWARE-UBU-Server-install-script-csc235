@@ -21,9 +21,9 @@ sudo systemctl start docker
 sudo usermod -aG docker $USER
 newgrp docker
 docker compose version
-docker run --rm hello-world | grep -q "Hello" && echo "\033[92mSuccess\033[0m" || echo "\033[31mFailure\033[0m"
+docker run --rm hello-world | grep -q "Hello" && echo -e "\033[92mSuccess\033[0m" || echo -e "\033[31mFailure\033[0m"
 sudo apt install open-vm-tools open-vm-tools-desktop
 sudo mkdir -p /mnt/share
 ln -s /mnt/share /home/student/share
-sudo echo ".host:/Share   /mnt/share   fuse.vmhgfs-fuse   defaults,allow_other   0   0" >> /etc/fstab
+echo ".host:/Share   /mnt/share   fuse.vmhgfs-fuse   defaults,allow_other   0   0" | sudo tee -a /etc/fstab
 shutdown -r now
