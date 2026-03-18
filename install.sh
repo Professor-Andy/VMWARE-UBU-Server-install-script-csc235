@@ -17,14 +17,13 @@ EOF
 
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl status docker
 sudo systemctl start docker
-sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 docker compose version
 docker run --rm hello-world | grep -q "Hello" && echo "\033[92mSuccess\033[0m" || echo "\033[31mFailure\033[0m"
 sudo apt install open-vm-tools open-vm-tools-desktop
 sudo mkdir -p /mnt/share
+ln -s /mnt/share /home/student/share
 sudo echo ".host:/Share   /mnt/share   fuse.vmhgfs-fuse   defaults,allow_other   0   0" >> /etc/fstab
 shutdown -r now
