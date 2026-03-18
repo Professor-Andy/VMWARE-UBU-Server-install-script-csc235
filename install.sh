@@ -15,8 +15,8 @@ Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
-sudo apt update 2> /dev/null
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 2> /dev/null
+sudo apt update > /dev/null
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin > /dev/null
 sudo systemctl start docker
 sudo usermod -aG docker $USER
 newgrp docker
