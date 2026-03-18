@@ -21,7 +21,6 @@ sudo apt update -y
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start docker
 sudo usermod -aG docker $USER
-newgrp docker
 docker compose version
 docker run --rm hello-world | grep -q "Hello" && echo -e "\033[92mSuccess\033[0m" || echo -e "\033[31mFailure\033[0m"
 sudo apt install -y open-vm-tools open-vm-tools-desktop > /dev/null
