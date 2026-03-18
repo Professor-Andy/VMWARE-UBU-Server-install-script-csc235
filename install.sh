@@ -22,7 +22,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 docker compose version
 docker run --rm hello-world | grep -q "Hello" && echo -e "\033[92mSuccess\033[0m" || echo -e "\033[31mFailure\033[0m"
-sudo apt install open-vm-tools open-vm-tools-desktop 2> /dev/null
+sudo apt install open-vm-tools open-vm-tools-desktop > /dev/null
 sudo mkdir /mnt/share
 ln -s /mnt/share /home/student/share
 echo ".host:/Share   /mnt/share   fuse.vmhgfs-fuse   defaults,allow_other   0   0" | sudo tee -a /etc/fstab
