@@ -18,8 +18,7 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 #sudo apt update -y
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo apt install -y open-vm-tools open-vm-tools-desktop 
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin open-vm-tools open-vm-tools-desktop 
 
 sudo systemctl start docker
 sudo usermod -aG docker $USER
